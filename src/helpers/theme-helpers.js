@@ -1,7 +1,4 @@
-import {
-  LIGHT_COLORS,
-  DARK_COLORS,
-} from '@/constants';
+import { LIGHT_COLORS, DARK_COLORS } from '@/constants';
 
 /**
  * This method produces an object with the following shape:
@@ -17,18 +14,13 @@ import {
  * tag in the root layout component.
  */
 export function generateThemeStyleObject(theme) {
-  const colors =
-    theme === 'light'
-      ? LIGHT_COLORS
-      : DARK_COLORS;
+  const colors = theme === 'light' ? LIGHT_COLORS : DARK_COLORS;
 
   let output = {};
 
-  Object.entries(colors).forEach(
-    ([key, value]) => {
-      output[`--color-${key}`] = value;
-    }
-  );
+  Object.entries(colors).forEach(([key, value]) => {
+    output[`--color-${key}`] = value;
+  });
 
   return output;
 }
@@ -38,21 +30,13 @@ export function generateThemeStyleObject(theme) {
  * root <html> tag, whenever the theme changes.
  */
 export function dynamicallyChangeCssVars(theme) {
-  const colors =
-    theme === 'light'
-      ? LIGHT_COLORS
-      : DARK_COLORS;
+  const colors = theme === 'light' ? LIGHT_COLORS : DARK_COLORS;
 
   const root = document.documentElement;
 
   root.setAttribute('data-color-mode', theme);
 
-  Object.entries(colors).forEach(
-    ([key, value]) => {
-      root.style.setProperty(
-        `--color-${key}`,
-        value
-      );
-    }
-  );
+  Object.entries(colors).forEach(([key, value]) => {
+    root.style.setProperty(`--color-${key}`, value);
+  });
 }

@@ -14,11 +14,7 @@ function RootLayout({ children }) {
   const style = generateThemeStyleObject(theme);
 
   return (
-    <html
-      lang="en"
-      data-color-theme={theme}
-      style={style}
-    >
+    <html lang="en" data-color-theme={theme} style={style}>
       <body>
         <header className="site-header">
           <Link href="">Some Website</Link>

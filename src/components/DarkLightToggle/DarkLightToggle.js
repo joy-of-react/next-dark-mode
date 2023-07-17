@@ -9,12 +9,10 @@ import VisuallyHidden from '@/components/VisuallyHidden';
 import styles from './DarkLightToggle.module.css';
 
 function DarkLightToggle({ initialTheme }) {
-  const [theme, setTheme] =
-    React.useState(initialTheme);
+  const [theme, setTheme] = React.useState(initialTheme);
 
   function handleClick() {
-    const nextTheme =
-      theme === 'light' ? 'dark' : 'light';
+    const nextTheme = theme === 'light' ? 'dark' : 'light';
 
     setTheme(nextTheme);
 
@@ -26,18 +24,13 @@ function DarkLightToggle({ initialTheme }) {
   }
 
   return (
-    <button
-      className={styles.wrapper}
-      onClick={handleClick}
-    >
+    <button className={styles.wrapper} onClick={handleClick}>
       {theme === 'light' ? (
         <Sun size="1.5rem" />
       ) : (
         <Moon size="1.5rem" />
       )}
-      <VisuallyHidden>
-        Toggle dark / light mode
-      </VisuallyHidden>
+      <VisuallyHidden>Toggle dark / light mode</VisuallyHidden>
     </button>
   );
 }

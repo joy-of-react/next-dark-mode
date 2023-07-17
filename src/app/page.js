@@ -9,8 +9,7 @@ function Home() {
           <div
             className="color-square"
             style={{
-              backgroundColor:
-                'var(--color-text)',
+              backgroundColor: 'var(--color-text)',
             }}
           />{' '}
           Text
@@ -19,8 +18,7 @@ function Home() {
           <div
             className="color-square"
             style={{
-              backgroundColor:
-                'var(--color-background)',
+              backgroundColor: 'var(--color-background)',
             }}
           />{' '}
           Background
@@ -29,8 +27,7 @@ function Home() {
           <div
             className="color-square"
             style={{
-              backgroundColor:
-                'var(--color-primary)',
+              backgroundColor: 'var(--color-primary)',
             }}
           />{' '}
           Primary
@@ -39,8 +36,7 @@ function Home() {
           <div
             className="color-square"
             style={{
-              backgroundColor:
-                'var(--color-secondary)',
+              backgroundColor: 'var(--color-secondary)',
             }}
           />{' '}
           Secondary
