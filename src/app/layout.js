@@ -11,8 +11,23 @@ import DarkLightToggle from '@/components/DarkLightToggle';
 import './styles.css';
 
 function RootLayout({ children }) {
-  const [theme, setTheme] =
-    React.useState('light');
+  const [theme, setTheme] = React.useState(() => {
+    if (typeof window === 'undefined') {
+      return 'light';
+    }
+
+    const savedValue =
+      window.localStorage.getItem('color-theme');
+
+    return savedValue || 'light';
+  });
+
+  React.useEffect(() => {
+    window.localStorage.setItem(
+      'color-theme',
+      theme
+    );
+  }, [theme]);
 
   const COLORS =
     theme === 'light'
