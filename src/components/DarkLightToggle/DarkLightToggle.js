@@ -1,14 +1,21 @@
 import React from 'react';
-import { Sun } from 'react-feather';
+import { Sun, Moon } from 'react-feather';
 
 import VisuallyHidden from '@/components/VisuallyHidden';
 
 import styles from './DarkLightToggle.module.css';
 
-function DarkLightToggle() {
+function DarkLightToggle({ theme, handleClick }) {
   return (
-    <button className={styles.wrapper}>
-      <Sun size="1.5rem" />
+    <button
+      className={styles.wrapper}
+      onClick={handleClick}
+    >
+      {theme === 'light' ? (
+        <Sun size="1.5rem" />
+      ) : (
+        <Moon size="1.5rem" />
+      )}
       <VisuallyHidden>
         Toggle dark / light mode
       </VisuallyHidden>

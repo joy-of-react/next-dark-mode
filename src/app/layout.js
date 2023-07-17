@@ -6,8 +6,6 @@ import DarkLightToggle from '@/components/DarkLightToggle';
 import './styles.css';
 
 function RootLayout({ children }) {
-  const isDarkMode = true;
-
   return (
     <html lang="en">
       <body>
