@@ -46,23 +46,6 @@ h6 {
   isolation: isolate;
 }
 
-/* Color theme */
-html {
-  --color-text: hsl(0deg 0% 5%);
-  --color-background: hsl(230deg 20% 95%);
-  --color-primary: hsl(245deg 100% 50%);
-  --color-secondary: hsl(345deg 100% 50%);
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    --color-text: hsl(0deg 0% 100%);
-    --color-background: hsl(230deg 20% 8%);
-    --color-primary: hsl(50deg 100% 50%);
-    --color-secondary: hsl(345deg 100% 70%);
-  }
-}
-
 /* Site styles */
 body {
   background: var(--color-background);
