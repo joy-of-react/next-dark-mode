@@ -1,6 +1,6 @@
-'use client';
 import React from 'react';
 import Link from 'next/link';
+import { cookies } from 'next/headers';
 
 import {
   LIGHT_COLORS,
@@ -11,34 +11,13 @@ import DarkLightToggle from '@/components/DarkLightToggle';
 import './styles.css';
 
 function RootLayout({ children }) {
-  const [theme, setTheme] = React.useState(() => {
-    if (typeof window === 'undefined') {
-      return 'light';
-    }
-
-    const savedValue =
-      window.localStorage.getItem('color-theme');
-
-    return savedValue || 'light';
-  });
-
-  React.useEffect(() => {
-    window.localStorage.setItem(
-      'color-theme',
-      theme
-    );
-  }, [theme]);
+  const savedTheme = cookies().get('color-theme');
+  const theme = savedTheme?.value || 'light';
 
   const COLORS =
     theme === 'light'
       ? LIGHT_COLORS
       : DARK_COLORS;
-
-  function flipTheme() {
-    setTheme(
-      theme === 'light' ? 'dark' : 'light'
-    );
-  }
 
   return (
     <html
@@ -54,10 +33,7 @@ function RootLayout({ children }) {
       <body>
         <header className="site-header">
           <Link href="">Some Website</Link>
-          <DarkLightToggle
-            theme={theme}
-            handleClick={flipTheme}
-          />
+          <DarkLightToggle initialTheme={theme} />
         </header>
         {children}
       </body>
