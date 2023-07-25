@@ -1,5 +1,5 @@
-## Next 13 template
+## Next 13 “Dark Mode” implementation
 
-This is a _super minimal_ starter for Next 13's App Router.
+This repository shows the code used in the “Dark Mode” lessons of [The Joy of React](https://joyofreact.com/).
 
-Not intended for use in production. Purely used for educational reasons.
+Specifically, it shows how to set up a “Dark mode” implementation using the `cookies()` helper.
