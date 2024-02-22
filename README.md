@@ -1,4 +1,4 @@
-## Next 13 “Dark Mode” implementation
+## Next “Dark Mode” implementation
 
 This repository shows the code used in the “Dark Mode” lessons of [The Joy of React](https://joyofreact.com/).
 
