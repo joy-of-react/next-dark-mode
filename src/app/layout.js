@@ -8,8 +8,8 @@ import DarkLightToggle from '@/components/DarkLightToggle';
 
 import './styles.css';
 
-function RootLayout({ children }) {
-  const savedTheme = cookies().get('color-theme');
+async function RootLayout({ children }) {
+  const savedTheme = (await cookies()).get('color-theme');
   const theme = savedTheme?.value || 'light';
 
   const themeColors = theme === 'light' ? LIGHT_COLORS : DARK_COLORS;
