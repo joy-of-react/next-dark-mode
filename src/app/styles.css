@@ -46,6 +46,7 @@ h6 {
   isolation: isolate;
 }
 
+html,
 html[data-color-theme="light"] {
   --color-text: hsl(0deg 0% 5%);
   --color-background: hsl(230deg 20% 95%);
