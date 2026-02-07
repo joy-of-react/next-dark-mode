@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { cookies } from 'next/headers';
+import { cookies, headers } from 'next/headers';
 
 import { LIGHT_COLORS, DARK_COLORS } from '@/constants';
 
@@ -10,7 +10,11 @@ import './styles.css';
 
 async function RootLayout({ children }) {
   const savedTheme = (await cookies()).get('color-theme');
-  const theme = savedTheme?.value || 'light';
+  const themeFromHeader = (await headers()).get(
+    'sec-ch-prefers-color-scheme'
+  );
+
+  const theme = savedTheme?.value || themeFromHeader || 'light';
 
   const themeColors = theme === 'light' ? LIGHT_COLORS : DARK_COLORS;
 
